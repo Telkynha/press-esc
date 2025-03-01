@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+    <title>Press Esc!</title>
+</head>
+
+<body>
+    <img src="media/Esc.png" alt="Button Esc not pressed" id="esc" style="width: 500px;">
+
+    <script>
+
+        let click = new Audio("media/click.ogg");
+        click.addEventListener("ended", function () {
+            
+        });
+
+        let escImg = document.getElementById("esc");
+        escImg.addEventListener("click", () => {
+            escImg.src = "media/EscPress.png";
+            click.pause()
+            click.currentTime = 0
+            click.play()
+            setTimeout(() => {
+                escImg.src = "media/Esc.png";
+            }, 80);
+        })
+
+    </script>
+
+</body>
+
+</html>
